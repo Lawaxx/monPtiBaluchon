@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
                BuildableName = "B.app"
-               BlueprintName = "B"
-               ReferencedContainer = "container:B.xcodeproj">
+               BlueprintName = "monPtiBaluchon"
+               ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB869275A6E0A00EEC4FD"
                BuildableName = "BTests.xctest"
-               BlueprintName = "BTests"
-               ReferencedContainer = "container:B.xcodeproj">
+               BlueprintName = "monPtiBaluchonTests"
+               ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,8 +44,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB874275A6E0A00EEC4FD"
                BuildableName = "BUITests.xctest"
-               BlueprintName = "BUITests"
-               ReferencedContainer = "container:B.xcodeproj">
+               BlueprintName = "monPtiBaluchonUITests"
+               ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
             BuildableName = "B.app"
-            BlueprintName = "B"
-            ReferencedContainer = "container:B.xcodeproj">
+            BlueprintName = "monPtiBaluchon"
+            ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -90,8 +90,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
             BuildableName = "B.app"
-            BlueprintName = "B"
-            ReferencedContainer = "container:B.xcodeproj">
+            BlueprintName = "monPtiBaluchon"
+            ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
