@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
-               BuildableName = "B.app"
+               BuildableName = "monPtiBaluchon.app"
                BlueprintName = "monPtiBaluchon"
                ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB869275A6E0A00EEC4FD"
-               BuildableName = "BTests.xctest"
+               BuildableName = "monPtiBaluchonTests.xctest"
                BlueprintName = "monPtiBaluchonTests"
                ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "93FAB874275A6E0A00EEC4FD"
-               BuildableName = "BUITests.xctest"
+               BuildableName = "monPtiBaluchonUITests.xctest"
                BlueprintName = "monPtiBaluchonUITests"
                ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
-            BuildableName = "B.app"
+            BuildableName = "monPtiBaluchon.app"
             BlueprintName = "monPtiBaluchon"
             ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
          </BuildableReference>
@@ -89,7 +89,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "93FAB853275A6E0700EEC4FD"
-            BuildableName = "B.app"
+            BuildableName = "monPtiBaluchon.app"
             BlueprintName = "monPtiBaluchon"
             ReferencedContainer = "container:monPtiBaluchon.xcodeproj">
          </BuildableReference>
