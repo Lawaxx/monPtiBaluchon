@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct TranslationResponse: Codable {
-    struct Data: Codable {
-        struct Translations: Codable {
-            let translatedText: String
-        }
-        let translations: [Translations]
-    }
-    let data : Data
+// MARK: - Welcome
+struct TranslationResponse: Decodable {
+    let data: DataClass
 }
 
+// MARK: - DataClass
+struct DataClass: Decodable {
+    let translations: [Translation]
+}
+
+// MARK: - Translation
+struct Translation: Decodable {
+    let translatedText: String
+}
 // MARK: - Json Response
 
 //
@@ -24,7 +28,7 @@ struct TranslationResponse: Codable {
 //    "data": {
 //        "translations": [
 //            {
-//                "translatedText": "Les vies des Noirs comptent"
+//                "translatedText": "Hello"
 //            }
 //        ]
 //    }

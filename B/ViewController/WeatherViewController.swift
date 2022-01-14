@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherDescriptionNY: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -27,11 +27,10 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var cityNameOf: UILabel!
     
-
+    let weatherServices = WeatherServices()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Ciel.jpeg")!)
         date()
         makeAPICall()
     }
@@ -43,68 +42,49 @@ class WeatherViewController: UIViewController {
 extension WeatherViewController {
     
     private func makeAPICall() {
-        WeatherServices.shared.getWeatherNYC { (result) in
-            switch result {
-                case .success(let response):
-                    self.updateWeatherDisplayNYC(response: response)
-                case .failure:
-                    self.presentAlert()
-            }
-        }
-        WeatherServices.shared.getWeatherCBR { (result) in
-            switch result {
-            case .success(let response):
-                self.updateWeatherDisplayCBR(response: response)
-            case .failure:
-                self.presentAlert()
+        
+        weatherServices.getWeather { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let response):
+                        self.updateWeather(response: response)
+                        self.updateLocalWeather(response: response)
+                    case .failure:
+                        self.presentAlert()
+                }
             }
         }
     }
     
-    private func updateWeatherDisplayNYC(response: WeatherResponse) {
-        //self.cityNameOn.text = "\(String(response.main.cityName))"
-        if let responseWeather = response.weather.first {
-            weatherDescriptionNY.text = responseWeather.description.capitalizingFirstLetter()
+    private func updateWeather(response: WeatherResponse){
+        if let responseWeather = response.list.first {
+            weatherDescriptionNY.text = responseWeather.weather[0].weatherDescription.capitalizingFirstLetter()
         }
-        temperatureNYC.text = "\(Int(response.main.temperature.rounded()))°C"
-        feelTemp.text = "\(Int(response.main.feelsLike.rounded()))°"
-        tempMini.text = "\(Int(response.main.tempMin.rounded()))°"
-        tempMaxi.text = "\(Int(response.main.tempMax.rounded()))°"
+        temperatureNYC.text = "\(Int((response.list[0].main.temp.rounded())))°C"
+        feelTemp.text = "\(Int(response.list[0].main.feelsLike.rounded()))°"
+        tempMini.text = "\(Int(response.list[0].main.tempMin.rounded()))°"
+        tempMaxi.text = "\(Int(response.list[0].main.tempMax.rounded()))°"
         
-        if let data = try? Data(contentsOf: response.weather[0].weatherIconURL){
+        if let data = try? Data(contentsOf: response.list[0].weather[0].weatherIconURL){
             self.weatherIcon.image = UIImage(data: data)
         }
     }
     
-    private func updateWeatherDisplayCBR(response: WeatherResponse) {
-//        self.cityNameOf.text = "\(String(response.main.cityName))"
-        if let responseWeather = response.weather.first {
-            weatherDescriptionLocal.text = responseWeather.description.capitalizingFirstLetter()
+    private func updateLocalWeather(response: WeatherResponse){
+        if let responseWeather = response.list.last {
+            weatherDescriptionLocal.text = responseWeather.weather[0].weatherDescription.capitalizingFirstLetter()
         }
-        temperatureCBR.text = "\(Int(response.main.temperature.rounded()))°C"
-        tempMinLocal.text = "Min.\(Int(response.main.tempMin.rounded()))°"
-        tempMaxLocal.text = "Max.\(Int(response.main.tempMax.rounded()))°"
-
-        if let data = try? Data(contentsOf: response.weather[0].weatherIconURL2){
+        temperatureCBR.text = "\(Int(response.list[1].main.temp.rounded()))°C"
+        tempMinLocal.text = "Min.\(Int(response.list[1].main.tempMin.rounded()))°"
+        tempMaxLocal.text = "Max.\(Int(response.list[1].main.tempMax.rounded()))°"
+        
+        if let data = try? Data(contentsOf: response.list[1].weather[0].weatherIconURL2){
             self.weatherCambraiIcon.image = UIImage(data: data)
         }
     }
 }
 
-// MARK: - PRESENTE ALERTS
-
-extension WeatherViewController {
-    
-    private func presentAlert() {
-        let alertVC = UIAlertController.init(title: "Une erreur est survenue", message: "erreur de chargement", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-}
-
-
 // MARK: - MANAGE DATE
-
 extension WeatherViewController {
     
     private func date() {
@@ -114,15 +94,7 @@ extension WeatherViewController {
         dateFormatter.dateStyle = .full
         dateFormatter.timeZone = .current
         dateFormatter.dateFormat = "EEEE d MMMM yyyy"
-        dateLabel.text = dateFormatter.string(from: date).capitalizingFirstLetters()
+        dateLabel.text = dateFormatter.string(from: date).capitalizingFirstLetter()
     }
     
-}
-extension String {
-    func capitalizingFirstLetters() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-    mutating func capitalizeFirstLetters() {
-        self = self.capitalizingFirstLetters()
-    }
 }

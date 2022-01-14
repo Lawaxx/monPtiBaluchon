@@ -7,50 +7,54 @@
 
 import Foundation
 
-struct WeatherResponse: Codable {
-    
+
+// MARK: - Welcome
+struct WeatherResponse: Decodable {
+    let cnt: Int
+    let list: [List]
+}
+
+// MARK: - List
+struct List: Decodable {
     let weather: [Weather]
-    let main : Main
-    
+    let main: Main
+    let dt, id: Int
+    let name: String
 }
+// MARK: - Main
+struct Main: Decodable {
+    let temp, feelsLike, tempMin, tempMax: Double
 
-struct Weather: Codable {
-    
-    let description: String
-    let icon: String
-    
-    var weatherIconURL: URL {
-        let urlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
-        return URL(string: urlString)!
-    }
-    var weatherIconURL2: URL {
-        let urlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
-        return URL(string: urlString)!
-    }
-}
-
-struct Main: Codable {
-   // let cityName: String
-    let temperature: Double
-    let tempMin: Double
-    let tempMax: Double
-    let feelsLike: Double
-    let humidity: Int
-    let pressure: Int
-    
     enum CodingKeys: String, CodingKey {
-       // case cityName = "name"
-        case temperature = "temp"
+        case temp
+        case feelsLike = "feels_like"
         case tempMin = "temp_min"
         case tempMax = "temp_max"
-        case feelsLike = "feels_like"
-        case humidity
-        case pressure
     }
-    
 }
+// MARK: - Weather
+struct Weather: Decodable {
+    let id: Int
+    let main: String
+    let weatherDescription: String
+    let icon: String
 
-
+    var weatherIconURL: URL {
+            let urlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
+            return URL(string: urlString)!
+        }
+    var weatherIconURL2: URL {
+            let urlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
+            return URL(string: urlString)!
+        }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case main = "main"
+        case weatherDescription = "description"
+        case icon = "icon"
+    }
+}
 
 // MARK: - Format JSON
 

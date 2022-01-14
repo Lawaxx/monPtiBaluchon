@@ -30,7 +30,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="mus-Pj-Txb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2H8-jT-cXT" userLabel="CityNameOn">
@@ -69,7 +69,7 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="p8P-ZZ-jvk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="53"/>
-                                                <color key="textColor" red="0.19930565359999999" green="0.2572490275" blue="0.17354041340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.070986280738280699" green="0.19038466694428746" blue="0.058975144789109583" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-ph-JRn" userLabel="Separator">
@@ -187,19 +187,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xad-t9-6Rr">
                                                 <rect key="frame" x="0.0" y="655" width="390" height="74"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="42"/>
-                                                <color key="textColor" red="0.19930565359999999" green="0.2572490275" blue="0.17354041340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.071059214206971061" green="0.173813307408205" blue="0.077258825234945164" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="KSh-2W-EUD" userLabel="STRG Temperature">
                                                 <rect key="frame" x="120.66666666666669" y="642" width="153" height="20.666666666666629"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max. 19°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iys-jA-vEu">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max. 19°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iys-jA-vEu">
                                                         <rect key="frame" x="0.0" y="0.0" width="61" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. 15°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="624-ar-18y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. 15°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="624-ar-18y">
                                                         <rect key="frame" x="91.999999999999986" y="0.0" width="61.000000000000014" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -327,7 +327,6 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="l91-IR-WKx" kind="relationship" relationship="viewControllers" id="Abq-rf-NWP"/>
                         <segue destination="D3i-uQ-CwJ" kind="relationship" relationship="viewControllers" id="opq-c4-0yW"/>
                         <segue destination="bJg-dH-JEq" kind="relationship" relationship="viewControllers" id="gLf-0W-2Es"/>
                         <segue destination="N3K-Jf-tc6" kind="relationship" relationship="viewControllers" id="zUC-eZ-6lA"/>
@@ -515,8 +514,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="47" id="uHx-xa-jrR"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.025800316176811888" green="0.0" blue="0.86078917980194092" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
+                                                        <color key="textColor" red="0.01409323246786422" green="0.0" blue="0.47019974226804129" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="N3K-Jf-tc6" id="Aed-Lk-bTV"/>
@@ -617,39 +616,12 @@
             </objects>
             <point key="canvasLocation" x="761" y="850"/>
         </scene>
-        <!--Destination-->
-        <scene sceneID="D9A-8D-IMK">
-            <objects>
-                <viewController id="l91-IR-WKx" userLabel="Destination" customClass="DestinationViewController" customModule="monPtiBaluchon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PHm-pW-UiJ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xF9-oe-aAv">
-                                <rect key="frame" x="0.0" y="165" width="390" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="J2d-mD-M4T"/>
-                        <color key="backgroundColor" red="0.91372549530000002" green="0.88235294819999999" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="gearshape" catalog="system" id="kV9-cd-jFV"/>
-                    <connections>
-                        <outlet property="picker" destination="xF9-oe-aAv" id="4BR-fK-X1V"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oBX-rF-Se0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="bId-4v-Unb"/>
-            </objects>
-            <point key="canvasLocation" x="757" y="1524"/>
-        </scene>
     </scenes>
     <resources>
         <image name="EUflag" width="512" height="512"/>
         <image name="USflag" width="512" height="512"/>
         <image name="arrow.left.arrow.right" catalog="system" width="119" height="128"/>
         <image name="arrow.up.right.and.arrow.down.left.rectangle.fill" catalog="system" width="128" height="93"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="sun.haze.fill" catalog="system" width="128" height="119"/>
         <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">

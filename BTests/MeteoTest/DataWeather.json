@@ -1,0 +1,85 @@
+{
+    "cnt": 2,
+    "list": [
+        {
+            "coord": {
+                "lon": -74.006,
+                "lat": 40.7143
+            },
+            "sys": {
+                "country": "US",
+                "timezone": -18000,
+                "sunrise": 1641903551,
+                "sunset": 1641937698
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "ciel dégagé",
+                    "icon": "01d"
+                }
+            ],
+            "main": {
+                "temp": -8.93,
+                "feels_like": -11.59,
+                "temp_min": -10.87,
+                "temp_max": -7.22,
+                "pressure": 1032,
+                "humidity": 49
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 1.34,
+                "deg": 276
+            },
+            "clouds": {
+                "all": 1
+            },
+            "dt": 1641906561,
+            "id": 5128581,
+            "name": "New York"
+        },
+        {
+            "coord": {
+                "lon": 3.2333,
+                "lat": 50.1667
+            },
+            "sys": {
+                "country": "FR",
+                "timezone": 3600,
+                "sunrise": 1641886984,
+                "sunset": 1641917180
+            },
+            "weather": [
+                {
+                    "id": 802,
+                    "main": "Clouds",
+                    "description": "partiellement nuageux",
+                    "icon": "03d"
+                }
+            ],
+            "main": {
+                "temp": 4.07,
+                "feels_like": 0.81,
+                "temp_min": 2.9,
+                "temp_max": 5.17,
+                "pressure": 1033,
+                "sea_level": 1033,
+                "grnd_level": 1026,
+                "humidity": 95
+            },
+            "visibility": 10000,
+            "wind": {
+                "speed": 3.85,
+                "deg": 185
+            },
+            "clouds": {
+                "all": 36
+            },
+            "dt": 1641906442,
+            "id": 3029030,
+            "name": "Cambrai"
+        }
+    ]
+}

@@ -6,16 +6,11 @@
 //
 
 import Foundation
-
-struct ExchangeResponse: Codable {
-    
-    let base: String
-    let rates: Rates
-    
-    struct Rates: Codable {
-        var EUR: Double
-        var USD: Double
-    }
+// MARK: - Welcome
+struct ExchangeResponse: Decodable {
+    let timestamp: Int
+    let base : String
+    let rates: [String: Double]
 }
 
 // MARK: JSON Response

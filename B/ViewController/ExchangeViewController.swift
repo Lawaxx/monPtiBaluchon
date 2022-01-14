@@ -8,7 +8,7 @@
 import UIKit
 
 class ExchangeViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var eurosTextfield: UITextField!
     @IBOutlet weak var dollarLabel: UILabel!
     
@@ -16,6 +16,7 @@ class ExchangeViewController: UIViewController, UITextFieldDelegate {
     var expectedValue: Double = 0.00
     var inputValue: Double = 0.00
     
+    let exchangeService = ExchangeService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,20 +34,22 @@ class ExchangeViewController: UIViewController, UITextFieldDelegate {
 extension ExchangeViewController {
     
     private func makeAPICall() {
-        ExchangeService.shared.getExchange { (result) in
-            switch result {
-            case .success(let response):
-                self.currencyChange(response: response)
-            case .failure :
-                self.presentAlert()
+        exchangeService.getExchange { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let response):
+                        self.currencyChange(response: response)
+                    case .failure :
+                        self.presentAlert()
+                }
             }
         }
     }
     
     
     private func currencyChange(response: ExchangeResponse) {
-        selectedCurrency = response.rates.EUR
-        expectedValue = response.rates.USD
+        selectedCurrency = Double(response.base) ?? 1.00
+        expectedValue = Double(response.rates["USD"] ?? 1.00)
         inputValue = Double(eurosTextfield.text!) ?? 1.00
         
         var conversion = (inputValue * expectedValue / selectedCurrency)
@@ -55,7 +58,7 @@ extension ExchangeViewController {
         if eurosTextfield.text != "" {
             dollarLabel.text = String(conversion)
         } else {
-            var USDRate = response.rates.USD
+            var USDRate = Double(response.rates["USD"]!)
             USDRate = round(USDRate * 100) / 100
             dollarLabel.text = String(USDRate)
         }
@@ -79,12 +82,3 @@ extension ExchangeViewController {
 
 
 
-// MARK: - PRESENTE ALERTS
-extension ExchangeViewController {
-    
-    private func presentAlert() {
-        let alertVC = UIAlertController.init(title: "Une erreur est survenue", message: "erreur de chargement", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-}

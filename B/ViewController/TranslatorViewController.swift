@@ -8,7 +8,7 @@
 import UIKit
 
 class TranslatorViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-
+    
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var targetLabel: UILabel!
     
@@ -22,6 +22,8 @@ class TranslatorViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     private var text1 = ""
     private var text2 = ""
+    
+    let translationServices = TranslateService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +51,14 @@ class TranslatorViewController: UIViewController, UITextFieldDelegate, UITextVie
 extension TranslatorViewController {
     
     private func makeAPICall() {
-        TranslateService.shared.getTranslation(for: textToTranslateTextfield.text ?? "", target: target, source: source) { [self] (result) in
-            switch result {
-            case .some(let response):
-                self.updateTranslatorDisplay(response: response)
-            case .none:
-            presentAlert()
+        translationServices.getTranslation(text: textToTranslateTextfield.text ?? "", target: target, source: source) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let response):
+                        self.updateTranslatorDisplay(response: response)
+                    case .failure:
+                        self.presentAlert()
+                }
             }
         }
     }
@@ -68,12 +72,12 @@ extension TranslatorViewController {
             texteWasTranslatedLabel.text = ""
         }
     }
-
+    
 }
 
 
 
-// MARK: - MANAGE REVERSAL BUTTON
+// MARK: - MANAGE REVERSAL BUTTON (BONUS)
 
 extension TranslatorViewController {
     
@@ -94,11 +98,11 @@ extension TranslatorViewController {
             textToTranslateTextfield.placeholder = "Write your text here to translate it into French"
         }
         if textToTranslateTextfield.text?.isEmpty == false {
-          let text3 = text1
-          text1 = text2
-          text2 = text3
-          textToTranslateTextfield.text = text1
-          texteWasTranslatedLabel.text = text2
+            let text3 = text1
+            text1 = text2
+            text2 = text3
+            textToTranslateTextfield.text = text1
+            texteWasTranslatedLabel.text = text2
         }
     }
 }
@@ -120,14 +124,3 @@ extension TranslatorViewController {
 }
 
 
-
-// MARK: - PRESENTE ALERTS
-
-extension TranslatorViewController {
-    
-    private func presentAlert() {
-        let alertVC = UIAlertController.init(title: "Une erreur est survenue", message: "erreur de chargement", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
-}
