@@ -34,13 +34,13 @@ class ExchangeViewController: UIViewController, UITextFieldDelegate {
 extension ExchangeViewController {
     
     private func makeAPICall() {
-        exchangeService.getExchange { (result) in
+        exchangeService.getExchange { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let response):
-                        self.currencyChange(response: response)
+                        self?.currencyChange(response: response)
                     case .failure :
-                        self.presentAlert()
+                        self?.presentAlert()
                 }
             }
         }

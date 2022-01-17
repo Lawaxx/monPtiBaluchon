@@ -24,9 +24,7 @@ class WeatherServices {
     
     func getWeather(callback: @escaping (Result<WeatherResponse,APIError>) -> Void) {
         
-        guard let url = URL(string: endpointURL) else {
-            preconditionFailure("url must be valid")
-        }
+        guard let url = URL(string: endpointURL) else { return }
         #if DEBUG
         NetworkLogger(url: url).show()
         #endif

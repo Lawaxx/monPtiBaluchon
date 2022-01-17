@@ -43,14 +43,14 @@ extension WeatherViewController {
     
     private func makeAPICall() {
         
-        weatherServices.getWeather { (result) in
+        weatherServices.getWeather { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let response):
-                        self.updateWeather(response: response)
-                        self.updateLocalWeather(response: response)
+                        self?.updateWeather(response: response)
+                        self?.updateLocalWeather(response: response)
                     case .failure:
-                        self.presentAlert()
+                        self?.presentAlert()
                 }
             }
         }

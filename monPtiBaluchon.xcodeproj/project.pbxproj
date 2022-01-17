@@ -260,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				2265CBF5276CC9F7003EDC8A /* Main.storyboard */,
-				93FAB8A7275A769600EEC4FD /* ExtensionString.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +276,7 @@
 		93FAB8D9275BC8A000EEC4FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				93FAB8A7275A769600EEC4FD /* ExtensionString.swift */,
 				93FAB8DA275BC8D900EEC4FD /* APIError.swift */,
 				22CBF75D277A2C0E0087498A /* NetworkLogger.swift */,
 				22E116EE27832845004BB90A /* URLSession+GenericCall.swift */,

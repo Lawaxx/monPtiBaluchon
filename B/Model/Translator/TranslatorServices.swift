@@ -22,9 +22,7 @@ class TranslateService : URLEncodable {
     //MARK: - API Management
     
     func getTranslation(text: String, target: String, source: String ,callback: @escaping (Result<TranslationResponse,APIError>) -> Void){
-        guard let baseURL = URL(string: "https://translation.googleapis.com/language/translate/v2") else {
-            return
-        }
+        guard let baseURL = URL(string: "https://translation.googleapis.com/language/translate/v2") else { return }
         let parameters = [("q", text),("target",target),("format", "text"),("source",source),("model", "base"),("key", APIKeys.googleAPI)]
         let url = encode(with: baseURL, and: parameters)
         #if DEBUG

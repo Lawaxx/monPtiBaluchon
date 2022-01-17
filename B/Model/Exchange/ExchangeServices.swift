@@ -26,9 +26,7 @@ class ExchangeService {
     
     func getExchange(callback: @escaping (Result<ExchangeResponse, APIError>) -> Void) {
         
-        guard let url = URL(string: exchangeUrl) else {
-            preconditionFailure("url must be valid")
-        }
+        guard let url = URL(string: exchangeUrl) else { return }
         #if DEBUG
         NetworkLogger(url: url).show()
         #endif

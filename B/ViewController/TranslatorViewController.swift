@@ -51,13 +51,13 @@ class TranslatorViewController: UIViewController, UITextFieldDelegate, UITextVie
 extension TranslatorViewController {
     
     private func makeAPICall() {
-        translationServices.getTranslation(text: textToTranslateTextfield.text ?? "", target: target, source: source) { (result) in
+        translationServices.getTranslation(text: textToTranslateTextfield.text ?? "", target: target, source: source) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let response):
-                        self.updateTranslatorDisplay(response: response)
+                        self?.updateTranslatorDisplay(response: response)
                     case .failure:
-                        self.presentAlert()
+                        self?.presentAlert()
                 }
             }
         }
