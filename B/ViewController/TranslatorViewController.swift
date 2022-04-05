@@ -27,9 +27,15 @@ class TranslatorViewController: UIViewController, UITextFieldDelegate, UITextVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        texteWasTranslatedLabel.text = ""
+        let myTextField = textToTranslateTextfield
+
+        myTextField!.attributedPlaceholder = NSAttributedString(
+            string: "Placeholder Text",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        texteWasTranslatedLabel.text = "Hello World"
         textToTranslateTextfield.placeholder = "Écrivez votre texte ici pour le traduire en Anglais"
+       
     }
     
     // MARK: - BUTTONS ACTION
@@ -121,6 +127,7 @@ extension TranslatorViewController {
         guard let text = textField.text else { return }
         if text.isEmpty { texteWasTranslatedLabel.text = "" }
     }
+    
 }
 
 

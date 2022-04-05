@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHo-sG-EjS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHo-sG-EjS">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -220,7 +220,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.91461150916581302" green="0.88363948949726656" blue="0.66366867513253469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.95215850515463918" green="0.78417890903405407" blue="0.45435339964607946" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="qcZ-05-Qib" firstAttribute="leading" relation="lessThanOrEqual" secondItem="jw3-At-JLv" secondAttribute="leading" constant="20" symbolic="YES" id="1DL-UH-JGX"/>
                                             <constraint firstItem="XRu-iU-akS" firstAttribute="top" secondItem="XWw-ic-fG2" secondAttribute="bottom" constant="9" id="1gr-8w-sjp"/>
@@ -279,7 +279,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bR7-qu-kVY"/>
-                        <color key="backgroundColor" red="0.91372549530000002" green="0.88235294819999999" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.9521585052" green="0.78417890899999998" blue="0.45435339959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="1I3-PM-7dg" firstAttribute="leading" secondItem="bR7-qu-kVY" secondAttribute="leading" id="CYo-It-jLz"/>
                             <constraint firstAttribute="bottom" secondItem="1I3-PM-7dg" secondAttribute="bottom" id="Qn5-nL-vGe"/>
@@ -405,7 +405,7 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.83823883529999998" green="0.80369007589999997" blue="0.57686585189999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.78039217000000005" green="0.86666667460000002" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cec-xv-lRx" secondAttribute="trailing" constant="10" id="Cg5-CR-thz"/>
                                             <constraint firstAttribute="height" constant="128" id="QXx-cO-LlA"/>
@@ -444,7 +444,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G7o-Te-wZt"/>
-                        <color key="backgroundColor" red="0.91372549530000002" green="0.88235294819999999" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.78060591667604662" green="0.86570450524100773" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sCK-Me-9eu" firstAttribute="leading" secondItem="G7o-Te-wZt" secondAttribute="leading" constant="20" id="8lD-6l-5Og"/>
@@ -581,12 +581,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVp-ye-KDX" userLabel="Taux de change ">
                                 <rect key="frame" x="20" y="56" width="350" height="29"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
-                                <color key="textColor" red="0.2104147375" green="0.2656084299" blue="0.40976843239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YbV-3u-TMG"/>
-                        <color key="backgroundColor" red="0.91372549530000002" green="0.88235294819999999" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.38611715982710726" green="0.60071681701030921" blue="0.37861888965455737" alpha="0.71011373299319724" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="YVp-ye-KDX" firstAttribute="top" secondItem="YbV-3u-TMG" secondAttribute="top" constant="12" id="11o-XV-DlX"/>
